@@ -48,7 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: true
   Docker-Image:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     needs: [Build]
     permissions:
       packages: write
