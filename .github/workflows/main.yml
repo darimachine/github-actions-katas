@@ -22,7 +22,7 @@ jobs:
       - name: Test
         run: ci/unit-test-app.sh
       - name: Upload a repo
-        uses: actions/download-artifact@v4 # Action to use
+        uses: actions/upload-artifact@v4
         with: 
           name: code 
           path: .
