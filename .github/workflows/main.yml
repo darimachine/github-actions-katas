@@ -46,7 +46,7 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISABLE_ERROS: true
+          DISABLE_ERRORS: true
   Docker-Image:
     runs-on: ubuntu-lates
     needs: [Build]
