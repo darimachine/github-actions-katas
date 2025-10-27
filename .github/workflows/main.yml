@@ -70,7 +70,5 @@ jobs:
           context: app
           push: true
           tags: ghcr.io/${{ github.actor }}/micronaut-app:1.0-${{ github.sha }},ghcr.io/${{ github.actor }}/micronaut-app:latest
-
-        run: bash ci/push-docker.sh
           
        
