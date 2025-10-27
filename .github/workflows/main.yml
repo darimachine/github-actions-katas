@@ -11,7 +11,7 @@ on:
 env:
   github_username: ${{ github.actor }}
   github_password: ${{ secrets.GITHUB_TOKEN }}
-  GIT_COMMIT: ${{github.sha}}
+  GIT_COMMIT: ${{ github.sha }}
   
 jobs:
   Build:
@@ -58,9 +58,9 @@ jobs:
         with:
           name: code
           path: .
-      - name: Build Docker
+      - name: build docker
         run: bash ci/build-docker.sh
-      - name: Push Docker
+      - name: push Docker
         run: bash ci/push-docker.sh
           
        
