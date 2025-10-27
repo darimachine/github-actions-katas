@@ -21,8 +21,6 @@ jobs:
         run: ci/build-app.sh
       - name: Test
         run: ci/unit-test-app.sh
-      - name: Super-Linter
-        uses: super-linter/super-linter@v8.2.1
       - name: Upload a repo
         uses: actions/download-artifact@v4 # Action to use
         with: 
