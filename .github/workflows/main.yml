@@ -58,9 +58,19 @@ jobs:
         with:
           name: code
           path: .
-      - name: build docker
-        run: bash ci/build-docker.sh
-      - name: push Docker
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: app
+          push: true
+          tags: ghcr.io/${{ github.actor }}/micronaut-app:1.0-${{ github.sha }},ghcr.io/${{ github.actor }}/micronaut-app:latest
+
         run: bash ci/push-docker.sh
           
        
