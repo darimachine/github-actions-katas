@@ -9,9 +9,18 @@ on:
         default: "World"
         required: true
         type: string
+    outputs:
+      current-time:
+        description: "This is current time which will be taken from down"
+        value: ${{ jobs.reusable-job.outputs.current-time }}
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
+    outputs:
+      current-time: ${{ steps.time.outputs.time }}
     steps:
-      - name: Echoes input param
-        run: echo Hello ${{ inputs.who-to-great }}
+      - name: "Echoes input param"
+        run: echo "Hello ${{ inputs.who-to-great }}"
+      - name: "Set time"
+        id: time
+        run: echo "time=$(date)" >> $GITHUB_OUTPUT
