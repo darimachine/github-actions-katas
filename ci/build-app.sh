@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-gradle clean shadowjar -p app
+gradle clean shadowjar -p app --stacktrace
