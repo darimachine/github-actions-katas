@@ -40,7 +40,6 @@ jobs:
         with:
           name: code
           path: .
-          include-hidden-files: true
       - name: Run lingting
         uses: super-linter/super-linter/slim@v7
         env:
